@@ -1,7 +1,7 @@
 'use strict';
 
 const article = document.querySelector('.js_article');
-let allShips = [];
+let allCharacters = [];
 let favouriteCharacters = [];
 const searchName = document.querySelector('.js_input');
 const btn = document.querySelector('.js_button');
