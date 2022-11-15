@@ -8,7 +8,7 @@ fetch('https://breakingbadapi.com/api/characters')
 function renderPerson(array) { //se pone un array genérico para que cuando se llame a la función se elija como argumento el array deseado (el array filtrado o el array genérico)
     article.innerHTML = '';
     for(const articleEl of array) {
-        article.innerHTML += `<li><article id="${array.id}">
+        article.innerHTML += `<li><article id="${array.char_id}">
         <img src=${articleEl.img} alt="foto personaje" />
         <p>${articleEl.name}</p>
         <p>${articleEl.status}</p>

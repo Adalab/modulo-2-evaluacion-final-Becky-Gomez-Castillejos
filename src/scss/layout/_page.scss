@@ -1,6 +1,11 @@
 body {
   padding: 2rem;
-  height: 100vh;
+  width: 100%;
+  margin: 0px 10px 30px 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+ 
   background-image: url('../images/bg-adalab.png');
   background-color: $color-bg;
   font-family: $font-main;
