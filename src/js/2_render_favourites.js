@@ -10,29 +10,34 @@ function addFavourites() {
 }
 
 
-function renderFavouritesCharacters() {
+/*function renderFavouritesCharacters() {
     favouriteCharacter.innerHTML = '';
-    for(let i = 0; i < favouriteCharacters.length; i++) {
-        favouriteCharacter.innerHTML += renderPerson(favouriteCharacters[i]);
-    }
-    addFavourites();
-}
+    
+        favouriteCharacter.innerHTML += addFavourites(favouriteCharacters[i]);
+    
+   
+}*/
 
 function handleClickCharacters(event) {
+    console.log("hola");
     event.currentTarget.classList.toggle("selected");
-    console.log(event.currentTarget.char_id);
+    console.log(event.currentTarget.id);
 
-    const selectedCharacter = allCharacters.find((eachCharacterObj) => eachCharacterObj.char_id === event.currentTarget.char_id);
+    const selectedCharacter = allCharacters.find((eachCharacterObj) => eachCharacterObj.char_id === parseInt(event.currentTarget.id));
     console.log(selectedCharacter);
 
-    const charactersInFavouritesIndex = favouriteCharacters.findIndex((eachCharacterObj) => eachCharacterObj.char_id === event.currentTarget.char_id);
+    const charactersInFavouritesIndex = favouriteCharacters.findIndex((eachCharacterObj) => eachCharacterObj.char_id === parseInt(event.currentTarget.id));
 
     if(charactersInFavouritesIndex === -1) {
         favouriteCharacters.push(selectedCharacter);
+        
+        localStorage.setItem('favourites', JSON.stringify(favouriteCharacters));
     }
     else {
         favouriteCharacters.splice(charactersInFavouritesIndex, 1);
+        localStorage.setItem('favourites', JSON.stringify(favouriteCharacters));
     }
    
-    renderFavouritesCharacters();
+    addFavourites();
 }
+
