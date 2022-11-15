@@ -1,0 +1,1 @@
+*{box-sizing:border-box;margin-left:5px;padding:0}body{padding:2rem;width:100%;margin:0px 10px 30px 150px;display:flex;flex-direction:row;justify-content:space-around;background-image:url("../images/bg-adalab.png");background-color:#f3f4f5;font-family:"Roboto",sans-serif}.selected{border:solid 2px red}.photo{width:100px;height:100px}
