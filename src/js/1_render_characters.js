@@ -9,8 +9,8 @@ const savedFavourites = JSON.parse(localStorage.getItem('favourites'));
 console.log(savedFavourites);
 if(savedFavourites !== null) {
 
-    favouriteCharacters = savedFavourites();
-    handleClickCharacters();
+    favouriteCharacters = savedFavourites;
+    addFavourites();
 }
 
 

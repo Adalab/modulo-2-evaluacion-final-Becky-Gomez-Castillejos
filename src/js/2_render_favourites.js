@@ -1,7 +1,7 @@
 function addFavourites() {
     favouriteCharacter.innerHTML = '';
     for(const favouriteEl of favouriteCharacters) {
-        favouriteCharacter.innerHTML += `<li><article><img src=${favouriteEl.img} alt="foto personaje" />
+        favouriteCharacter.innerHTML += `<li><article><img src=${favouriteEl.img} alt="foto personaje" class="favourite_photo" />
         </li><li><p>${favouriteEl.name}</p></li><li>
         <p>${favouriteEl.status}</p></article></li>`;
     }
