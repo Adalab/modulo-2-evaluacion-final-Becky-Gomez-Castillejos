@@ -3,6 +3,7 @@ fetch('https://breakingbadapi.com/api/characters')
     .then(data => {
         allCharacters = data;
         renderPerson(allCharacters);
+        console.log(allCharacters);
     })
 
 const savedFavourites = JSON.parse(localStorage.getItem('favourites'));
@@ -19,6 +20,7 @@ function renderPerson(array) { //se pone un array genérico para que cuando se l
         article.innerHTML += `<li class= "js_li" id="${articleEl.char_id}"><article>
         <img src=${articleEl.img} alt="foto personaje" class="photo" />
         <p>${articleEl.name}</p>
+        <p>${articleEl.appearance}</p>
         <p>${articleEl.status}</p>
         </article></li>`;
     }
@@ -34,6 +36,15 @@ function searchPerson(ev) {
 
     const showNames = allCharacters.filter(articleEl => articleEl.name.includes(inputValue));
     renderPerson(showNames);
+    
+}
+
+function renderFavourites(ev) {
+    for(const favouriteCharactersEl of favouriteCharacters) {
+        console.log(favouriteCharactersEl.name); //bucle para llegar a cada objeto del array
+    }
+    
 }
 
 btn.addEventListener("click", searchPerson);
+btn1.addEventListener("click", renderFavourites);
